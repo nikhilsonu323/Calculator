@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: darkgray;
+        }
+        fieldset{
+            width: 300px;
+            background-color: bisque;
+            border: 5px solid black;
+        }
+        legend{
+            margin-left: 80px;
+            background-color: darkgray;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            border: 5px solid rgb(89, 89, 148);
+        }
+        .ab{
+            background-color: rgb(150, 124, 68);
+            color: rgb(235, 201, 201);
+            font-size: large;
+            font: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 4px solid black;
+            padding: 20px;
+            height: 20px;
+        }
+        input{
+            text-shadow: 10px;
+            border: 3px solid rgb(51, 8, 65);
+            background-color: rgb(117, 86, 131);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin: 5px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        document.addEventListener('keyup', (event) => {
+        var name = event.key;
+        if(name === "Enter"){
+            var a = document.getElementById("pa").innerText;
+            document.getElementById("pa").innerText=eval(a);
+        }}
+        if(name === "1")
+            document.getElementById("pa").innerHTML +="1";
+        if(name === "2")
+            document.getElementById("pa").innerHTML +="2";
+        if(name === "3")
+            document.getElementById("pa").innerHTML +="3";
+        if(name === "4")
+            document.getElementById("pa").innerHTML +="4";
+        if(name === "5")
+            document.getElementById("pa").innerHTML +="5";
+        if(name === "6")
+            document.getElementById("pa").innerHTML +="6";
+        if(name === "7")
+            document.getElementById("pa").innerHTML +="7";
+        if(name === "8")
+            document.getElementById("pa").innerHTML +="8";
+        if(name === "9")
+            document.getElementById("pa").innerHTML +="9";
+        if(name === "0")
+            document.getElementById("pa").innerHTML +="0";
+        if(name === "+")
+            document.getElementById("pa").innerHTML +="+";
+        if(name === "-")
+            document.getElementById("pa").innerHTML +="-";
+        if(name === "*")
+            document.getElementById("pa").innerHTML +="*";
+        if(name === "/")
+            document.getElementById("pa").innerHTML +="/";
+        if(name === "Backspace"){
+            var a = document.getElementById("pa").innerText;
+            document.getElementById("pa").innerText = a.slice(0,a.length-1);
+        }
+        }
+        );
+        function e(){
+            document.getElementById("pa").innerHTML = eval(document.getElementById("pa").innerText);
+        }
+        function ab(){
+            var a = document.getElementById("pa").innerHTML;
+            document.getElementById("pa").innerHTML=a.slice(0,a.length-1);
+        }
+        function cd(a){
+            document.getElementById("pa").innerHTML+=a;
+        }
+        function cl(){
+            document.getElementById("pa").innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <center>
+        <fieldset>
+            <legend>Calculator</legend>
+            <form name="z"> 
+                <p class="ab" id="pa" name="b"></p>
+                <input type="button" value="1" onclick="cd('1')">
+                <input type="button" value="2" onclick="cd('2')">
+                <input type="button" value="3" onclick="cd('3')">
+                <input type="button" value="+" onclick="cd('+')"><br>
+                <input type="button" value="4" onclick="cd('4')">
+                <input type="button" value="5" onclick="cd('5')">
+                <input type="button" value="6" onclick="cd('6')">
+                <input type="button" value="-" onclick="cd('-')"><br>
+                <input type="button" value="7" onclick="cd('7')">
+                <input type="button" value="8" onclick="cd('8')">
+                <input type="button" value="9" onclick="cd('9')">
+                <input type="button" value="*" onclick="cd('*')"><br>
+                <input type="button" value="/" onclick="cd('/')">
+                <input type="button" value="0" onclick="cd('0')">
+                <input type="button" value="." onclick="cd('.')">
+                <input type="button" value="=" onclick="e()"><br>
+                <input type="button" value="  Delete  " onclick="ab()">
+                <input type="button" value="  AC  " onclick="cl()">
+            </form>
+        </fieldset>
+    </center>
+</body>
+</html>
